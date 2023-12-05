@@ -10,11 +10,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: "development",
     entry: {
-        index: "./src/index.js",
-        login: "./src/login.js"               //当index和login同时使用index.js的依赖资源，会导致index随着项目规模扩大而变得臃肿
+        index: path.resolve(__dirname,"../src/index.js"),
+        login: path.resolve(__dirname,"../src/login.js"),             //当index和login同时使用index.js的依赖资源，会导致index随着项目规模扩大而变得臃肿
     },
     output: {
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "../dist"),
         filename: 'js/[name].js'
 
     },
@@ -66,8 +66,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, './src/img'),
-                    to: path.resolve(__dirname, './dist/img')
+                    from: path.resolve(__dirname, '../src/img'),
+                    to: path.resolve(__dirname, '../dist/img')
                 }
             ]
         }),
