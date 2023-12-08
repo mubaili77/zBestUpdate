@@ -10,7 +10,10 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config={
     mode :'development',
-    entry:path.resolve(__dirname,'../src/main.js'),
+    devtool:'eval',
+    entry: {
+        index:path.resolve(__dirname,'../src/main.js'),
+    },
     output: {
         filename:'js/[name].js',
         path:path.resolve(__dirname,'../dist'),
@@ -88,7 +91,7 @@ const config={
         minimize: true,    //代码压缩注释，空格，换行等等
         usedExports: true,    //treeshaking
         minimizer: [
-            new UglifyJsPlugin({ sourceMap: true }),
+            new UglifyJsPlugin(),
             new OptimizeCssAssetsPlugin({
                 assetNameRegExp: /\.css$/g,
                 cssProcessorOptions: {

@@ -1,9 +1,16 @@
 <template>
-<div #app>{{message}}</div>
+ <Home />
+
 
 </template>
 <script>
+import Home from "./Home.vue";
+
 export default {
+    name:"app",
+    components: {
+        Home,
+    },
     data() {
         return {
             message:'hello immoc.com'
@@ -11,4 +18,4 @@ export default {
     }
 }
 </script>
-<style></style>
+<style scoped></style>
