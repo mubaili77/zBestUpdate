@@ -6,7 +6,8 @@
             <h1 class="fl"><a href="index.html"><img src="img/logo.png" /></a></h1>
             <div class="fr clearfix" id="top1">
                 <p class="fl">
-                    <a href="login.html" id="login" @click="handleClick">登录</a>
+                    <!-- <a id="login" @click="handleClick">登录</a> -->
+                    <a id="login" href="login.html">登录</a>
                     <a href="#" id="reg">注册</a>
                 </p>
                 <form action="#" method="get" class="fl">
@@ -424,7 +425,6 @@ import './css/public.css'
 import './css/index.css'
 
 import 'jquery'
-import './js/public'
 import './js/nav'
 
 
@@ -434,7 +434,7 @@ export default {
     },
     methods: {
         handleClick() {
-
+			this.$router.push('/login');
         }
     }
    

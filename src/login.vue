@@ -14,6 +14,8 @@
 
 
 <script>
+
+import './css/login.css';
 export default {
    
 }
